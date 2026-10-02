@@ -45,12 +45,14 @@ export interface TeamMember {
   inactive?: boolean;
 }
 
+export const BASE_URL = '/fandomsforpali'
+
 export const siteConfig = {
   title: 'Fandoms for Palestine',
   tagline: 'Uniting fans of all things fiction to help those in Palestine',
   description: 'A guide to all things FFP - JacksonBug, Lead & Director applications, commission forms, raffle forms, and donations.',
   themeColor: '#0D2235',
-  url: 'https://fandomsforpali.carrd.co',
+  url: 'https://fandomsforpali.github.com',
 
   header: {
     home: {
