@@ -22,14 +22,14 @@ const {
 } = Astro.props;
 
 const colorClasses: Record<string, string> = {
-  coral: 'bg-[#E87676]',
-  crimson: 'bg-[#A82727]',
-  orange: 'bg-[#F27935]',
-  green: 'bg-[#27A83C]',
-  plum: 'bg-[#633C3C]',
-  brown: 'bg-[#9E5D4F]',
-  cyan: 'bg-[#71D5E3]',
-  grey: 'bg-[#A1A1A1] !text-[#454545]',
+  coral: 'bg-ffp-coral',
+  crimson: 'bg-ffp-crimson',
+  orange: 'bg-ffp-orange',
+  green: 'bg-ffp-green',
+  plum: 'bg-ffp-plum',
+  brown: 'bg-ffp-brown',
+  cyan: 'bg-ffp-cyan',
+  grey: 'bg-ffp-grey !text-[var(--color-btn-grey-text)]',
 };
 
 const variantClasses: Record<string, string> = {
@@ -42,10 +42,10 @@ const variantClasses: Record<string, string> = {
 };
 
 const baseClasses =
-  'relative inline-flex items-center justify-center text-center rounded-[2rem] shadow-carrd-btn overflow-hidden text-ellipsis whitespace-nowrap transition-transform duration-250 ease-in-out hover:scale-[1.025] active:scale-[0.98] select-none';
+  'relative inline-flex items-center justify-center text-center rounded-carrd-btn shadow-carrd-btn overflow-hidden text-ellipsis whitespace-nowrap transition-transform duration-250 ease-in-out hover:scale-[1.025] active:scale-[0.98] select-none';
 
 const gradientOverlay =
-  'before:content-[""] before:absolute before:inset-0 before:bg-gradient-to-tr before:from-[rgba(255,92,92,0.412)] before:to-[rgba(255,163,163,0.008)] before:pointer-events-none';
+  'before:content-[""] before:absolute before:inset-0 before:bg-gradient-to-tr before:from-[var(--color-btn-overlay-start)] before:to-[var(--color-btn-overlay-end)] before:pointer-events-none';
 
 const computedColor = colorClasses[color] || colorClasses.coral;
 const computedVariant = variantClasses[variant] || variantClasses.stacked;
@@ -67,4 +67,3 @@ const Tag = href ? 'a' : 'button';
     <slot />
   </span>
 </Tag>
-

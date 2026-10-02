@@ -1,0 +1,85 @@
+/**
+ * Fandoms for Palestine — Central Theme Configuration
+ * 
+ * Edit this single file to modify the entire site's colors, typeface,
+ * background gradients, button palettes, and shadows without touching
+ * individual Astro component files.
+ */
+
+:root {
+  /* ==========================================================================
+     1. TYPOGRAPHY
+     ========================================================================== */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+
+  /* ==========================================================================
+     2. TEXT COLORS
+     ========================================================================== */
+  --color-text-primary: #FEFFC4;          /* Main headings, titles, cream text */
+  --color-text-dark: #ECEDB7;             /* Action and banner button text */
+  --color-text-muted: rgba(254, 255, 196, 0.85); /* Subtitles and paragraphs */
+  --color-text-dim: rgba(254, 255, 196, 0.65);   /* Footer and subtle labels */
+
+  /* ==========================================================================
+     3. SITE BACKGROUND & MESH OVERLAY
+     ========================================================================== */
+  --color-bg-base: #946352;               /* Base fallback background color */
+  --color-bg-gradient-start: #DE5F5F;     /* 232deg gradient start (coral red) */
+  --color-bg-gradient-end: #496644;       /* 232deg gradient end (forest green) */
+  --color-bg-mesh-stroke: rgba(255, 133, 133, 0.471); /* Wireframe SVG mesh line color */
+
+  /* ==========================================================================
+     4. CONTAINERS, CARDS & DIVIDERS
+     ========================================================================== */
+  --color-card-bg: rgba(0, 0, 0, 0.28);   /* Contributor and story card background */
+  --color-card-border: rgba(254, 255, 196, 0.2); /* Subtle card border */
+  --color-card-hover-border: rgba(254, 255, 196, 0.45);
+  --color-divider: #FEFFC4;               /* Dotted separator color */
+  --radius-card: 1.5rem;                  /* Card corner radius */
+
+  /* ==========================================================================
+     5. BRAND ACCENTS
+     ========================================================================== */
+  --color-accent-lime: #8CC452;           /* Logo badge circular border, checkmarks */
+  --color-accent-green: #27A83C;          /* Positive / verified indicator */
+  --color-accent-crimson: #A82727;        /* Negative / won't draw indicator */
+
+  /* ==========================================================================
+     6. BUTTON PALETTES
+     ========================================================================== */
+  --color-btn-coral: #E87676;             /* e.g., Donation Campaign, Top nav */
+  --color-btn-crimson: #A82727;           /* e.g., GoFundMe Donate, What We Do */
+  --color-btn-orange: #F27935;            /* e.g., Writers & Artists, Our Team */
+  --color-btn-green: #27A83C;             /* e.g., Commission Form, FAQ */
+  --color-btn-plum: #633C3C;              /* e.g., About Wijdan, Discord Server */
+  --color-btn-brown: #9E5D4F;
+  --color-btn-cyan: #71D5E3;
+  --color-btn-grey: #A1A1A1;
+  --color-btn-grey-text: #454545;
+
+  /* Button Overlays & Hover */
+  --color-btn-overlay-start: rgba(255, 92, 92, 0.412);
+  --color-btn-overlay-end: rgba(255, 163, 163, 0.008);
+  --radius-btn: 2rem;
+  --hover-scale-btn: 1.025;
+
+  /* ==========================================================================
+     7. SHADOWS
+     ========================================================================== */
+  --shadow-btn: 0rem 0.375rem 0rem 0rem rgba(0, 0, 0, 0.188);
+  --shadow-avatar: 0rem 0.375rem 0rem 0rem rgba(0, 0, 0, 0.188);
+  --shadow-heading: 0 0.375rem 0 rgba(0, 0, 0, 0.188);
+  --shadow-subheading: 0 0.188rem 0 rgba(0, 0, 0, 0.188);
+}
+
+/* Base background application using theme variables */
+.carrd-background {
+  background-color: var(--color-bg-base);
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%20type%3D%22text%2Fcss%22%3E%20path%20%7B%20fill%3A%20none%3B%20stroke%3A%20rgba(255,133,133,0.471)%3B%20stroke-width%3A%202.01px%3B%20stroke-linecap%3A%20round%3B%20stroke-linejoin%3A%20round%3B%20%7D%20%3C%2Fstyle%3E%20%3Cpath%20vector-effect%3D%22non-scaling-stroke%22%20d%3D%22M424%2C331.8c0%2C12.5-6.7%2C24.1-17.5%2C30.3l-132%2C76.2c-10.8%2C6.3-24.2%2C6.3-35%2C0l-132-76.2%20C96.7%2C355.8%2C90%2C344.3%2C90%2C331.8V179.2c0-12.5%2C6.7-24.1%2C17.5-30.3l132-76.2c10.8-6.3%2C24.2-6.3%2C35%2C0l132%2C76.2%20c10.8%2C6.3%2C17.5%2C17.8%2C17.5%2C30.3V331.8z%20M238.5%2C73l-256%2C147.6%20M273.5%2C439l252.1-145.4%20M256%2C634.7V378.3c0-12.5%2C6.7-24.1%2C17.5-30.3%20l252.1-145.4%20M256-122.7v256.4c0%2C12.5-6.7%2C24.1-17.5%2C30.3l-256%2C147.6%22%2F%3E%3C%2Fsvg%3E"),
+    linear-gradient(232deg, var(--color-bg-gradient-start) 0%, var(--color-bg-gradient-end) 61%);
+  background-size: 272px auto, auto;
+  background-position: center, 0% 0%;
+  background-repeat: repeat, repeat;
+  background-attachment: fixed;
+}
+

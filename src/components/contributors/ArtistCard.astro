@@ -22,7 +22,7 @@ const getPlatformIcon = (platform: string) => {
 ---
 
 <article
-  class={`w-full bg-black/30 rounded-3xl p-6 sm:p-7 border border-cream/20 shadow-carrd-btn flex flex-col gap-5 text-left text-cream transition-all duration-200 hover:border-cream/40 ${customClass}`}
+  class={`w-full bg-card-bg rounded-carrd-card p-6 sm:p-7 border border-card-border shadow-carrd-btn flex flex-col gap-5 text-left text-cream transition-all duration-200 hover:border-[var(--color-card-hover-border)] ${customClass}`}
   id={`artist-${artist.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
 >
   <!-- Artist Header & Pronouns -->
