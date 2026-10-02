@@ -94,18 +94,18 @@ export const siteConfig = {
       pretitle: '- Current campaign -',
       title: 'DEMIGODS FOR PALESTINE',
       buttons: [
-        {
-          label: '🌊 Apply for Leads',
-          href: 'https://forms.gle/DJuDeua58vzmD2fC7',
-          color: 'crimson' as const,
-          external: true,
-        },
-        {
-          label: '🔥 Apply for Directors',
-          href: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
-          color: 'orange' as const,
-          external: true,
-        },
+        // {
+        //   label: '🌊 Apply for Leads',
+        //   href: 'https://forms.gle/DJuDeua58vzmD2fC7',
+        //   color: 'cyan' as const,
+        //   external: true,
+        // },
+        // {
+        //   label: '🔥 Apply for Directors',
+        //   href: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
+        //   color: 'orange' as const,
+        //   external: true,
+        // },
         {
           label: '⚔️ Campaign Details & Comic',
           href: '/currentcampaign',
@@ -134,7 +134,7 @@ export const siteConfig = {
         {
           label: 'What we do',
           href: '/whatwedo',
-          color: 'crimson' as const,
+          color: 'cyan' as const,
         },
         {
           label: 'Our Team',
@@ -189,7 +189,7 @@ export const siteConfig = {
     leadAppUrl: 'https://forms.gle/DJuDeua58vzmD2fC7',
     directorAppUrl: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
     description:
-      'Fandoms for Palestine is embarking on our next major campaign: Demigods for Palestine! We are rallying the Percy Jackson fandom to organize creative charity initiatives, art and writing contributions, and mutual aid to support Palestinian families in need.',
+      'JacksonBug School is an Awareness campaign dedicated to educating people about various aspects of Palestinian culture and identity through a crossover of the Miraculous Ladybug and Percy Jackson universes. We’ll be promoting various initiatives throughout the campaign for those who want to donate, alongside a curated educational series and lots of other content as well!',
     rolesOverview:
       'Right now, we are recruiting Directors, Leads, and volunteers across all fandom communities to shape the creative and operational vision for Demigods for Palestine.',
     donationLink:
