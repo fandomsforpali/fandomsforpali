@@ -88,7 +88,7 @@ export const siteConfig = {
       href: '/contributors',
     },
     banner: {
-      src: '/assets/campaign-jacksonbug/apps_countdown_6days.jpg',
+      src: '/assets/campaign-jacksonbug/assembling.jpg',
       alt: 'Lead & Director Applications - JacksonBug Campaign',
       href: '/currentcampaign',
       external: false,
@@ -183,7 +183,7 @@ export const siteConfig = {
   campaign: {
     title: 'JACKSONBUG',
     subtitle: 'Percy Jackson & Olympians for Palestine Charity Campaign',
-    image: '/assets/campaign-jacksonbug/apps_countdown_6days.jpg',
+    image: '/assets/campaign-jacksonbug/assembling.jpg',
     leadAppUrl: 'https://forms.gle/DJuDeua58vzmD2fC7',
     directorAppUrl: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
     description:
@@ -435,6 +435,11 @@ export const siteConfig = {
             platform: 'instagram',
             url: 'https://www.instagram.com/rainyr.am',
             ariaLabel: 'Joey (rainyr.am) on Instagram',
+          },
+          {
+            platform: 'tumblr',
+            url: 'https://tumblr.com/rainyram',
+            ariaLabel: 'Joey (rainyr.am) on Tumblr'
           }
         ]
       },
