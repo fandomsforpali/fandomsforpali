@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 
-export default defineConfig({
-  integrations: [tailwind()],
-});
+import playformCompress from '@playform/compress';
 
+export default defineConfig({
+  integrations: [tailwind(), playformCompress()],
+});
