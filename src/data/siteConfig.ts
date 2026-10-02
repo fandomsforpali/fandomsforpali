@@ -35,7 +35,7 @@ export interface GalleryItem {
 export const siteConfig = {
   title: 'Fandoms for Palestine',
   tagline: 'Uniting fans of all things fiction to help those in Palestine',
-  description: 'A guide to all things FFP - Demigods for Palestine, Lead & Director applications, commission forms, raffle forms, and donations.',
+  description: 'A guide to all things FFP - JacksonBug, Lead & Director applications, commission forms, raffle forms, and donations.',
   themeColor: '#0D2235',
   url: 'https://fandomsforpali.carrd.co',
 
@@ -74,7 +74,7 @@ export const siteConfig = {
     },
     banner: {
       src: '/assets/campaign-jacksonbug/apps_countdown_6days.jpg',
-      alt: 'Lead & Director Applications - Demigods for Palestine Campaign',
+      alt: 'Lead & Director Applications - JacksonBug Campaign',
       href: '/currentcampaign',
       external: false,
     },
@@ -92,7 +92,7 @@ export const siteConfig = {
     },
     campaignSection: {
       pretitle: '- Current campaign -',
-      title: 'DEMIGODS FOR PALESTINE',
+      title: 'JACKSONBUG',
       buttons: [
         // {
         //   label: '🌊 Apply for Leads',
@@ -183,7 +183,7 @@ export const siteConfig = {
   },
 
   campaign: {
-    title: 'Demigods for Palestine',
+    title: 'JACKSONBUG',
     subtitle: 'Percy Jackson & Olympians for Palestine Charity Campaign',
     image: '/assets/campaign-jacksonbug/apps_countdown_6days.jpg',
     leadAppUrl: 'https://forms.gle/DJuDeua58vzmD2fC7',
@@ -191,7 +191,7 @@ export const siteConfig = {
     description:
       'JacksonBug School is an Awareness campaign dedicated to educating people about various aspects of Palestinian culture and identity through a crossover of the Miraculous Ladybug and Percy Jackson universes. We’ll be promoting various initiatives throughout the campaign for those who want to donate, alongside a curated educational series and lots of other content as well!',
     rolesOverview:
-      'Right now, we are recruiting Directors, Leads, and volunteers across all fandom communities to shape the creative and operational vision for Demigods for Palestine.',
+      'Right now, we are recruiting Directors, Leads, and volunteers across all fandom communities to shape the creative and operational vision for JacksonBug.',
     donationLink:
       'https://chuffed.org/project/help-mohammedf',
     comicPanels: [
@@ -284,10 +284,9 @@ export const siteConfig = {
     story:
       "Now, Mohammed and his family live in a makeshift tent that offers no protection against the harsh winter cold, wind, and rain. With basic food, potable water, and medical care for his father scarce, this fundraiser is a vital lifeline to provide essential winter supplies, food, urgent medical care, and aid toward their safety and future.",
     urgentNeeds: [
-      'Emergency food, clean drinking water, and daily nutrition supplies.',
       'Medical treatment and rehabilitation for his seriously injured father.',
       'Winterization supplies, warm blankets, and reinforced shelter from the cold.',
-      'Humanitarian aid towards family safety, relocation, and rebuilding their future.'
+      'Family safety and relocation.',
     ],
   },
 
