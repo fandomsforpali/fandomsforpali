@@ -21,11 +21,22 @@ export interface PricingTier {
   fullRender: string;
 }
 
+export interface ComicPanel {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface GalleryItem {
+  src: string;
+  alt: string;
+}
+
 export const siteConfig = {
   title: 'Fandoms for Palestine',
   tagline: 'Uniting fans of all things fiction to help those in Palestine',
-  description: 'A guide to all things FFP - Miraculers for Palestine, commission forms, raffle forms, and donations.',
-  themeColor: '#FFE3E3',
+  description: 'A guide to all things FFP - Demigods for Palestine, Lead & Director applications, commission forms, raffle forms, and donations.',
+  themeColor: '#0D2235',
   url: 'https://fandomsforpali.carrd.co',
 
   header: {
@@ -35,20 +46,21 @@ export const siteConfig = {
     },
     actions: [
       {
-        label: 'MFP Campaign Info',
-        href: '/currentcampaign',
-        color: 'green' as const,
+        label: 'Apply: Leads',
+        href: 'https://forms.gle/DJuDeua58vzmD2fC7',
+        color: 'cyan' as const,
+        external: true,
+      },
+      {
+        label: 'Apply: Directors',
+        href: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
+        color: 'orange' as const,
+        external: true,
       },
       {
         label: 'Donate Now',
         href: 'https://www.gofundme.com/f/stand-with-wijdan-help-her-win-the-fight-against-cancer?attribution_id=sl:c29b9e82-8bf4-4107-970f-acee21d9f09c&lang=en_US&utm_campaign=man_sharesheet_dash&utm_medium=customer&utm_source=copy_link',
         color: 'crimson' as const,
-        external: true,
-      },
-      {
-        label: 'Commission Form',
-        href: 'https://forms.gle/J7XUrEeo91jDKtUE6',
-        color: 'orange' as const,
         external: true,
       },
     ],
@@ -61,41 +73,53 @@ export const siteConfig = {
       href: '/contributors',
     },
     banner: {
-      src: '/assets/images/image05.jpg',
-      alt: 'Mi-Raffle-lous @buggachat art raffle | Miraculers for Palestine',
-      href: 'https://forms.gle/XBujmwrz1fDNTeJHA',
+      src: '/assets/campaign-jacksonbug/apps_countdown_6days.jpg',
+      alt: 'Lead & Director Applications - Demigods for Palestine Campaign',
+      href: '/currentcampaign',
+      external: false,
+    },
+    leadsButton: {
+      label: '🌊 Apply for Leads (Form)',
+      href: 'https://forms.gle/DJuDeua58vzmD2fC7',
+      color: 'cyan' as const,
       external: true,
     },
-    raffleButton: {
-      label: 'MFP Raffle Form',
-      href: 'https://forms.gle/XBujmwrz1fDNTeJHA',
-      color: 'crimson' as const,
+    directorsButton: {
+      label: '🔥 Apply for Directors (Form)',
+      href: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
+      color: 'orange' as const,
       external: true,
     },
     campaignSection: {
       pretitle: '- Current campaign -',
-      title: 'MIRACULERS FOR PALESTINE',
+      title: 'DEMIGODS FOR PALESTINE',
       buttons: [
         {
-          label: '🐞MFP Donation Campaign🇵🇸',
+          label: '🌊 Apply for Leads',
+          href: 'https://forms.gle/DJuDeua58vzmD2fC7',
+          color: 'cyan' as const,
+          external: true,
+        },
+        {
+          label: '🔥 Apply for Directors',
+          href: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
+          color: 'orange' as const,
+          external: true,
+        },
+        {
+          label: '⚔️ Campaign Details & Comic',
           href: '/currentcampaign',
-          color: 'coral' as const,
+          color: 'plum' as const,
         },
         {
           label: 'Our Writers & Artists',
           href: '/contributors',
-          color: 'orange' as const,
-        },
-        {
-          label: 'MFP Commission Form',
-          href: 'https://forms.gle/qRMXcidJjtY5ChEz5',
-          color: 'green' as const,
-          external: true,
+          color: 'coral' as const,
         },
         {
           label: 'About Wijdan & family',
           href: '/wijdan',
-          color: 'plum' as const,
+          color: 'green' as const,
         },
       ] as ButtonItem[],
     },
@@ -154,15 +178,62 @@ export const siteConfig = {
   },
 
   campaign: {
-    title: 'Miraculers for Palestine (MFP)',
-    subtitle: 'Art & Writing Charity Campaign for Palestine',
-    image: '/assets/images/image02.jpg',
+    title: 'Demigods for Palestine',
+    subtitle: 'Percy Jackson & Olympians for Palestine Charity Campaign',
+    image: '/assets/campaign-jacksonbug/apps_countdown_6days.jpg',
+    leadAppUrl: 'https://forms.gle/DJuDeua58vzmD2fC7',
+    directorAppUrl: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
     description:
-      'Miraculers for Palestine is an online charity campaign uniting artists, writers, and fans of Miraculous Ladybug to raise critical humanitarian relief and medical funds for families in Palestine, including Wijdan and her family.',
+      'Fandoms for Palestine is embarking on our next major campaign: Demigods for Palestine! We are rallying the Percy Jackson fandom to organize creative charity initiatives, art and writing contributions, and mutual aid to support Palestinian families in need.',
+    rolesOverview:
+      'Right now, we are recruiting Directors, Leads, and volunteers across all fandom communities to shape the creative and operational vision for Demigods for Palestine.',
     donationLink:
       'https://www.gofundme.com/f/stand-with-wijdan-help-her-win-the-fight-against-cancer?attribution_id=sl:c29b9e82-8bf4-4107-970f-acee21d9f09c&lang=en_US&utm_campaign=man_sharesheet_dash&utm_medium=customer&utm_source=copy_link',
-    commissionFormLink: 'https://forms.gle/qRMXcidJjtY5ChEz5',
-    raffleFormLink: 'https://forms.gle/XBujmwrz1fDNTeJHA',
+    comicPanels: [
+      {
+        src: '/assets/campaign-jacksonbug/comic_ffp1.png',
+        alt: 'FFP Crossover Comic - Part 1: Bringing beloved fandoms together for Palestine',
+        caption: 'Panel 1: Connecting fans across fictional universes to build real-world solidarity.',
+      },
+      {
+        src: '/assets/campaign-jacksonbug/comic_ffp2.png',
+        alt: 'FFP Crossover Comic - Part 2: Introducing Ahsan from Gaza and Laaiqah from Jenin',
+        caption: 'Panel 2: Introducing Palestinian heroes Ahsan and Laaiqah.',
+      },
+      {
+        src: '/assets/campaign-jacksonbug/comic_ffp3.png',
+        alt: 'FFP Crossover Comic - Part 3: Superpowers of resilience and hope',
+        caption: 'Panel 3: Powers rooted in courage, culture, and community.',
+      },
+      {
+        src: '/assets/campaign-jacksonbug/comic_ffp4.png',
+        alt: 'FFP Crossover Comic - Part 4: Stepping through portals into new worlds',
+        caption: 'Panel 4: Crossing multiverses into the Greek mythological world of Percy Jackson.',
+      },
+      {
+        src: '/assets/campaign-jacksonbug/comic_ffp5.png',
+        alt: 'FFP Crossover Comic - Part 5: Percy and Annabeth call for Leads and Directors',
+        caption: 'Panel 5: We need Directors, Leads, and volunteers to build the next campaign!',
+      },
+    ] as ComicPanel[],
+    dtiysImages: [
+      {
+        src: '/assets/campaign-jacksonbug/dtiys_13_12.jpg',
+        alt: 'Draw This In Your Style - 10 Days Left',
+      },
+      {
+        src: '/assets/campaign-jacksonbug/dtiys_19_12.jpg',
+        alt: 'Draw This In Your Style - 4 Days Left',
+      },
+      {
+        src: '/assets/campaign-jacksonbug/dtiys_21_12.jpg',
+        alt: 'Draw This In Your Style - 2 Days Left',
+      },
+      {
+        src: '/assets/campaign-jacksonbug/dtiys_23_12.jpg',
+        alt: 'Draw This In Your Style - 1 Day Left',
+      },
+    ] as GalleryItem[],
     pricingTiers: [
       {
         category: 'Bust',
@@ -231,25 +302,24 @@ export const siteConfig = {
 
   faq: [
     {
-      question: 'How do commissions work?',
+      question: 'How do applications for Leads and Directors work?',
       answer:
-        'Submit the commission form with your prompt and creator preference. Once accepted, you donate directly to the designated fundraiser (e.g., Wijdan’s GoFundMe) and submit proof of payment to receive your completed commission.',
+        'Fill out the respective Google Form (Leads or Directors) with your experience, portfolio/sample work, and availability. Our core organizers review applications and reach out via Discord or email.',
     },
     {
-      question: 'Where does my money go?',
+      question: 'Do I have to be in the Percy Jackson fandom to volunteer?',
       answer:
-        'You donate directly to verified fundraisers. FFP organizers never touch your funds; we only verify donation receipts and match you with our volunteer creators.',
+        'No! As Shay’s comic highlights, you don’t need to belong to a specific fandom to participate and make a difference. All creators, writers, and community builders passionate about Palestine are welcome.',
+    },
+    {
+      question: 'Where does donation money go?',
+      answer:
+        'Donors contribute directly to verified campaigns (such as Wijdan’s cancer fund). FFP organizers never take a cut or hold donations; our mission is purely mutual aid and community connection.',
     },
     {
       question: 'How can I participate as an artist or writer?',
       answer:
-        'Join our official FFP Discord server or fill out our creator intake forms during open call periods to offer your services for upcoming campaigns.',
-    },
-    {
-      question: 'Can I donate without ordering a commission or raffle ticket?',
-      answer:
-        'Yes, absolutely! You can click "Donate Now" on any page to donate directly to the GoFundMe campaign.',
+        'Join our official FFP Discord server or check our announcement links when creator calls go live for the new campaign.',
     },
   ],
 };
-

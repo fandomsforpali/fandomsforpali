@@ -11,7 +11,8 @@ const { campaign } = siteConfig;
 ---
 
 <Layout title={campaign.title} description={campaign.description}>
-  <div class="w-full max-w-[54rem] flex flex-col items-center text-center px-4">
+  <div class="w-full max-w-[56rem] flex flex-col items-center text-center px-4">
+    <!-- Campaign Header -->
     <SectionHeader
       pretitle="- Current Campaign -"
       title={campaign.title}
@@ -23,72 +24,159 @@ const { campaign } = siteConfig;
       {campaign.description}
     </p>
 
-    <!-- Action Buttons -->
+    <!-- Top Action CTA Buttons -->
     <ButtonList direction="row" gap="sm" class="my-4">
       <li>
+        <Button href={campaign.leadAppUrl} variant="nav" color="cyan" external={true}>
+          🌊 Apply for Leads
+        </Button>
+      </li>
+      <li>
+        <Button href={campaign.directorAppUrl} variant="nav" color="orange" external={true}>
+          🔥 Apply for Directors
+        </Button>
+      </li>
+      <li>
         <Button href={campaign.donationLink} variant="nav" color="crimson" external={true}>
-          Donate to Wijdan (GoFundMe)
-        </Button>
-      </li>
-      <li>
-        <Button href={campaign.commissionFormLink} variant="nav" color="green" external={true}>
-          Submit Commission Request
-        </Button>
-      </li>
-      <li>
-        <Button href={campaign.raffleFormLink} variant="nav" color="orange" external={true}>
-          Enter Art Raffle
+          ❤️ Donate to Wijdan
         </Button>
       </li>
     </ButtonList>
 
     <DottedDivider />
 
-    <!-- Commission Pricing Table & Image -->
-    <div class="w-full my-4">
-      <SectionHeader title="Commission Pricing Guide" level={2} />
-      <BannerCard
-        src={campaign.image}
-        alt="Miraculers for Palestine Commission Tiers: Sketch, Lineart, Flat Color, Full Render"
-        rounded="xl"
-      />
+    <!-- Applications Open Banner Highlight -->
+    <div class="w-full my-6 flex flex-col items-center">
+      <SectionHeader title="Applications Open: Leads & Directors" level={2} />
+      <div class="max-w-[28rem] w-full my-4">
+        <BannerCard
+          src={campaign.image}
+          alt="Lead & Director Applications - Demigods for Palestine Campaign"
+          rounded="2xl"
+        />
+      </div>
 
-      <!-- Structured Accessible Pricing Table -->
-      <div class="w-full overflow-x-auto my-6 rounded-2xl bg-black/20 p-4 shadow-carrd-btn border border-cream/20">
-        <table class="w-full text-cream text-center border-collapse">
-          <thead>
-            <tr class="border-b border-cream/30 text-sm sm:text-base font-bold text-cream-dark uppercase">
-              <th class="py-3 px-2 text-left">Tier</th>
-              <th class="py-3 px-2">Sketch</th>
-              <th class="py-3 px-2">Lineart</th>
-              <th class="py-3 px-2">Flat Color</th>
-              <th class="py-3 px-2">Full Render</th>
-            </tr>
-          </thead>
-          <tbody class="text-sm sm:text-base font-medium">
-            {
-              campaign.pricingTiers.map((tier) => (
-                <tr class="border-b border-cream/15 last:border-0 hover:bg-cream/10 transition-colors">
-                  <td class="py-3 px-2 text-left font-bold text-cream">{tier.category}</td>
-                  <td class="py-3 px-2">{tier.sketch}</td>
-                  <td class="py-3 px-2">{tier.lineart}</td>
-                  <td class="py-3 px-2 font-semibold text-ffp-lime">{tier.flatColor}</td>
-                  <td class="py-3 px-2 font-bold text-cream-dark">{tier.fullRender}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
+      <p class="text-cream/90 text-sm sm:text-base max-w-xl my-2">
+        {campaign.rolesOverview}
+      </p>
+
+      <!-- Roles Details Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full my-6 text-left">
+        <div class="rounded-carrd-card bg-card-bg border border-card-border p-6 shadow-carrd-btn flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-2xl">🔥</span>
+              <h3 class="text-xl font-bold text-ffp-orange">Directors</h3>
+            </div>
+            <p class="text-sm text-cream/85 leading-relaxed">
+              Directors guide the high-level vision of the campaign. Responsibilities include setting milestones, managing overall event schedules, overseeing department coordination, and liaising with humanitarian partners and the core FFP leadership team.
+            </p>
+          </div>
+          <div class="mt-6">
+            <Button href={campaign.directorAppUrl} variant="nav" color="orange" external={true} class="w-full">
+              Submit Director Application &rarr;
+            </Button>
+          </div>
+        </div>
+
+        <div class="rounded-carrd-card bg-card-bg border border-card-border p-6 shadow-carrd-btn flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-2xl">🌊</span>
+              <h3 class="text-xl font-bold text-ffp-cyan">Department Leads</h3>
+            </div>
+            <p class="text-sm text-cream/85 leading-relaxed">
+              Leads manage focused creative and operational departments: Art Leads, Writing Leads, Communications/Social Media Leads, and Logistics Leads. They coordinate creator check-ins, curate assets, and ensure our community deliverables run smoothly.
+            </p>
+          </div>
+          <div class="mt-6">
+            <Button href={campaign.leadAppUrl} variant="nav" color="cyan" external={true} class="w-full">
+              Submit Lead Application &rarr;
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
 
     <DottedDivider />
 
-    <div class="my-4">
+    <!-- Campaign Comic Strip Section -->
+    <section class="w-full my-6 flex flex-col items-center">
+      <SectionHeader
+        pretitle="- Campaign Storyline -"
+        title="The Next Chapter: FFP Multiverse Comic"
+        subtitle="Art by Shay — Ahsan & Laaiqah unite fandoms for Palestine"
+        level={2}
+      />
+
+      <p class="text-cream/90 text-sm sm:text-base max-w-2xl my-3">
+        Follow our Palestinian heroes Ahsan (Gaza) and Laaiqah (Jenin) as they step through multiversal portals into the world of Percy Jackson and Camp Half-Blood to call on fans worldwide to unite for Palestine.
+      </p>
+
+      <div class="w-full max-w-[36rem] flex flex-col gap-6 my-6">
+        {
+          campaign.comicPanels.map((panel, idx) => (
+            <figure class="w-full rounded-2xl overflow-hidden bg-card-bg border border-card-border shadow-carrd-btn p-3">
+              <img
+                src={panel.src}
+                alt={panel.alt}
+                class="w-full h-auto rounded-xl object-contain"
+                loading="lazy"
+              />
+              {panel.caption && (
+                <figcaption class="mt-3 text-xs sm:text-sm text-cream/80 italic text-center px-2">
+                  {panel.caption}
+                </figcaption>
+              )}
+            </figure>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-3 justify-center my-4">
+        <Button href={campaign.leadAppUrl} variant="nav" color="cyan" external={true}>
+          🌊 Apply for Leads
+        </Button>
+        <Button href={campaign.directorAppUrl} variant="nav" color="orange" external={true}>
+          🔥 Apply for Directors
+        </Button>
+      </div>
+    </section>
+
+    <DottedDivider />
+
+    <!-- DTIYS Artwork Countdown Gallery -->
+    <section class="w-full my-6 flex flex-col items-center">
+      <SectionHeader
+        pretitle="- Community Art -"
+        title="Draw This In Your Style (DTIYS)"
+        subtitle="Countdown art from our campaign community"
+        level={2}
+      />
+
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full my-6">
+        {
+          campaign.dtiysImages.map((img) => (
+            <div class="rounded-xl overflow-hidden bg-card-bg border border-card-border shadow-carrd-btn transition-transform duration-250 hover:scale-105">
+              <img
+                src={img.src}
+                alt={img.alt}
+                class="w-full h-auto object-cover"
+                loading="lazy"
+              />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <DottedDivider />
+
+    <!-- Back to Home Button -->
+    <div class="my-6">
       <Button href="/" variant="nav" color="plum">
         &larr; Back to Home
       </Button>
     </div>
   </div>
 </Layout>
-

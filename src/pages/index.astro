@@ -15,7 +15,7 @@ const { landing } = siteConfig;
 
 <Layout>
   <TwoColumn>
-    <!-- Left Column: Branding & Raffle Highlight -->
+    <!-- Left Column: Branding & Open Call Highlight -->
     <Fragment slot="left">
       <AvatarBadge
         src={landing.avatar.src}
@@ -40,14 +40,25 @@ const { landing } = siteConfig;
         external={landing.banner.external}
       />
 
-      <Button
-        href={landing.raffleButton.href}
-        variant="banner"
-        color={landing.raffleButton.color}
-        external={landing.raffleButton.external}
-      >
-        {landing.raffleButton.label}
-      </Button>
+      <!-- Quick Application CTA Buttons -->
+      <div class="w-full max-w-[22.5rem] flex flex-col gap-2.5 my-2">
+        <Button
+          href={landing.leadsButton.href}
+          variant="banner"
+          color={landing.leadsButton.color}
+          external={landing.leadsButton.external}
+        >
+          {landing.leadsButton.label}
+        </Button>
+        <Button
+          href={landing.directorsButton.href}
+          variant="banner"
+          color={landing.directorsButton.color}
+          external={landing.directorsButton.external}
+        >
+          {landing.directorsButton.label}
+        </Button>
+      </div>
     </Fragment>
 
     <!-- Right Column: Campaign Links, About FFP, and Socials -->
@@ -104,4 +115,3 @@ const { landing } = siteConfig;
     </Fragment>
   </TwoColumn>
 </Layout>
-
