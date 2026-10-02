@@ -59,7 +59,7 @@ export const siteConfig = {
       },
       {
         label: 'Donate Now',
-        href: 'https://www.gofundme.com/f/stand-with-wijdan-help-her-win-the-fight-against-cancer?attribution_id=sl:c29b9e82-8bf4-4107-970f-acee21d9f09c&lang=en_US&utm_campaign=man_sharesheet_dash&utm_medium=customer&utm_source=copy_link',
+        href: 'https://chuffed.org/project/help-mohammedf',
         color: 'crimson' as const,
         external: true,
       },
