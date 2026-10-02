@@ -30,8 +30,7 @@ const { mohammed } = siteConfig;
 
     <!-- Personal Quote / Message from Mohammed -->
     <div class="w-full rounded-2xl bg-black/35 p-6 my-4 border border-cream/25 shadow-carrd-btn text-left text-cream leading-relaxed">
-      <div class="flex items-center gap-2 mb-3">
-        <span class="text-xl">💬</span>
+      <div class="mb-3">
         <h2 class="text-lg sm:text-xl font-bold text-cream">A Message from Mohammed</h2>
       </div>
       <blockquote class="italic text-base sm:text-lg text-cream/95 pl-4 border-l-2 border-ffp-lime my-2">
@@ -48,7 +47,7 @@ const { mohammed } = siteConfig;
         {
           mohammed.urgentNeeds.map((need) => (
             <li class="flex items-start gap-2.5">
-              <span class="text-ffp-green font-bold">✓</span>
+              <span class="text-ffp-lime font-bold leading-none mt-1">&#10003;</span>
               <span>{need}</span>
             </li>
           ))
@@ -64,7 +63,7 @@ const { mohammed } = siteConfig;
         color="crimson"
         external={true}
       >
-        ❤️ Donate to Mohammed's Family (Chuffed)
+        Donate to Mohammed's Family (Chuffed)
       </Button>
 
       <p class="text-xs text-cream/70 max-w-md">
