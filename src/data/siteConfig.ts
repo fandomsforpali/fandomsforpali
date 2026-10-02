@@ -408,7 +408,7 @@ export const siteConfig = {
         role: 'Organizational Mod',
       },
       {
-        name: 'Kyle (cardiac_agreste)',
+        name: 'Kyle (@cardiac-agreste)',
         role: 'Organizational Mod',
         socials: [
           {
@@ -434,7 +434,17 @@ export const siteConfig = {
     {
       question: 'How do applications for Leads and Directors work?',
       answer:
-        'Fill out the respective Google Form (Leads or Directors) with your experience, portfolio/sample work, and availability. Our core organizers review applications and reach out via Discord or email.',
+        'Fill out the respective Google Form (Leads or Directors). Our core organizers review applications and reach out via Discord or email.',
+    },
+    {
+      question: 'Can I still donate if I’m from a foreign country that doesn’t use dollar as money / How is the payment done?',
+      answer:
+        'Yes, of course! Payment will be proceed through Pay Pal, so everyone from every country in the world can donate if they want to! You will be required to donate the money yourself to a chosen charity or Fundraiser we provide. You will also be asked to provide proof from the website you donated and of your bank account. Once that’s verified, you will be contacted by the artist who wil work with you! It’s like paying for a commission, you’ll receive your art, but by donating the money to people in need, and not to the artist.',
+    },
+    {
+      question: 'How can I cancel or leave the campaign if I ever become incapable of donating?',
+      answer:
+        'Donation can be a one-time thing only, or as many times as you’d like! You’re not forced to quit the campaign if you ever become unable to donate, and you can always continue to support us regardless!'
     },
     {
       question: 'Do I have to be in the Percy Jackson fandom to volunteer?',
@@ -444,12 +454,17 @@ export const siteConfig = {
     {
       question: 'Where does donation money go?',
       answer:
-        'Donors contribute directly to verified campaigns (such as Wijdan’s cancer fund). FFP organizers never take a cut or hold donations; our mission is purely mutual aid and community connection.',
+        'Donors contribute directly to verified campaigns (such as Mohammed’s family fund). FFP organizers never take a cut or hold donations; our mission is purely aid and community connection.',
     },
     {
       question: 'How can I participate as an artist or writer?',
       answer:
         'Join our official FFP Discord server or check our announcement links when creator calls go live for the new campaign.',
+    },
+    {
+      question: 'I was wondering if there were any other campaigns for Palestine along with any campaigns for Ukraine you know of that are still active?',
+      answer:
+        'We do not know of other campaigns working for the greater good but If anyone is inspired by us, please feel free to create your own for another place in need! We’ll be sure to share any campaigns that come our way :)',
     },
   ],
 };
