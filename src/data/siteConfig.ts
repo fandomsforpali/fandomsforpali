@@ -107,28 +107,11 @@ export const siteConfig = {
       pretitle: '- Current campaign -',
       title: 'JACKSONBUG',
       buttons: [
-        // {
-        //   label: 'Apply for Leads',
-        //   href: 'https://forms.gle/DJuDeua58vzmD2fC7',
-        //   color: 'cyan' as const,
-        //   external: true,
-        // },
-        // {
-        //   label: 'Apply for Directors',
-        //   href: 'https://forms.gle/bUA6HhSRoXBhRQfZA',
-        //   color: 'orange' as const,
-        //   external: true,
-        // },
         {
           label: 'Campaign Details & Comic',
           href: '/currentcampaign',
           color: 'green' as const,
         },
-        // {
-        //   label: 'Our Writers & Artists',
-        //   href: '/contributors',
-        //   color: 'coral' as const,
-        // },
         {
           label: 'About Wijdan & family',
           href: '/wijdan',
