@@ -18,6 +18,9 @@ export default {
         'ffp-brown': 'var(--color-btn-brown)',
         'ffp-cyan': 'var(--color-btn-cyan)',
         'ffp-grey': 'var(--color-btn-grey)',
+        'ffp-darkblue': 'var(--color-btn-darkblue)',
+        'ffp-lightblue': 'var(--color-btn-lightblue)',
+        'ffp-sand': 'var(--color-btn-sand)',
 
         // Cards & containers
         'card-bg': 'var(--color-card-bg)',

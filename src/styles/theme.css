@@ -58,6 +58,14 @@
   --color-btn-cyan: #1696C8;              /* Poseidon Ocean Blue (e.g. Leads App) */
   --color-btn-grey: #8E9AAF;
   --color-btn-grey-text: #0E1E2B;
+  
+  /* From Shay's pics */
+  --color-btn-darkblue: #41c3dd;
+  --color-btn-lightblue: #abe0e6;
+  --color-btn-sand: #fff6dd;
+
+
+
 
   /* Button Overlays & Hover */
   --color-btn-overlay-start: rgba(255, 255, 255, 0.24);
