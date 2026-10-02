@@ -12,7 +12,6 @@ const { moderators } = siteConfig;
 <Layout title={moderators.title} description={moderators.subtitle}>
   <div class="w-full max-w-[46rem] flex flex-col items-center text-center px-4">
     <SectionHeader
-      pretitle="- Community & Coordination -"
       title={moderators.title}
       subtitle={moderators.subtitle}
       level={1}
@@ -21,7 +20,7 @@ const { moderators } = siteConfig;
     <!-- Team Members Grid -->
     <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 my-6 text-left">
       {
-        moderators.members.map((member) => (
+        moderators.members.filter((member) => !member.inactive).map((member) => (
           <div class="bg-card-bg rounded-carrd-card p-5 sm:p-6 border border-card-border shadow-carrd-btn flex flex-col justify-between transition-all duration-200 hover:border-[var(--color-card-hover-border)]">
             <div>
               <h2 class="text-cream text-lg sm:text-xl font-bold">
@@ -71,6 +70,49 @@ const { moderators } = siteConfig;
     </div>
 
     <DottedDivider />
+
+    <SectionHeader
+      title={moderators.emeritusTitle}
+      subtitle={moderators.emeritusSubtitle}
+      level={1}
+    />
+
+    <!-- Team Members Grid -->
+    <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 my-6 text-left">
+      {
+        moderators.members.filter((member) => !!member.inactive).map((member) => (
+          <div class="bg-card-bg rounded-carrd-card p-5 sm:p-6 border border-card-border shadow-carrd-btn flex flex-col justify-between transition-all duration-200 hover:border-[var(--color-card-hover-border)]">
+            <div>
+              <h2 class="text-cream text-lg sm:text-xl font-bold">
+                {member.name}
+              </h2>
+              <p class="text-cream/80 text-sm sm:text-base font-medium mt-1">
+                {member.role}
+              </p>
+            </div>
+
+            {member.socials && member.socials.length > 0 && (
+              <ul class="flex flex-wrap items-center gap-2 mt-4 list-none p-0" aria-label={`Social links for ${member.name}`}>
+                {member.socials.map((social) => (
+                  <li>
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.ariaLabel}
+                      title={social.ariaLabel}
+                      class="w-9 h-9 rounded-full bg-cream/15 hover:bg-cream text-cream hover:text-ffp-plum flex items-center justify-center shadow-carrd-btn transition-all duration-200 hover:scale-110"
+                    >
+                      <Icon name={social.platform} size={18} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))
+      }
+    </div>
 
     <div class="my-2">
       <Button href="/" variant="nav" color="green">

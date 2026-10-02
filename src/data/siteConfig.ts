@@ -318,6 +318,8 @@ export const siteConfig = {
   moderators: {
     title: 'Our Team',
     subtitle: 'The volunteer organizers and moderators behind Fandoms for Palestine',
+    emeritusTitle: 'Emeritus Team Members',
+    emeritusSubtitle: 'Volunteers who have stepped down after helping with previous campaigns.',
     members: [
       {
         name: 'Beetlez (@Beeetlezz)',
