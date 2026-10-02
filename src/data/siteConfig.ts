@@ -97,7 +97,7 @@ export const siteConfig = {
         {
           label: '🌊 Apply for Leads',
           href: 'https://forms.gle/DJuDeua58vzmD2fC7',
-          color: 'cyan' as const,
+          color: 'crimson' as const,
           external: true,
         },
         {
@@ -109,18 +109,23 @@ export const siteConfig = {
         {
           label: '⚔️ Campaign Details & Comic',
           href: '/currentcampaign',
-          color: 'plum' as const,
+          color: 'green' as const,
         },
-        {
-          label: 'Our Writers & Artists',
-          href: '/contributors',
-          color: 'coral' as const,
-        },
+        // {
+        //   label: 'Our Writers & Artists',
+        //   href: '/contributors',
+        //   color: 'coral' as const,
+        // },
         {
           label: 'About Wijdan & family',
           href: '/wijdan',
-          color: 'green' as const,
+          color: 'sand' as const,
         },
+        {
+          label: 'About Mohammed',
+          href: '/mohammed',
+          color: 'plum' as const,
+        }
       ] as ButtonItem[],
     },
     aboutSection: {
