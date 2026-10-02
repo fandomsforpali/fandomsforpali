@@ -2,7 +2,7 @@
 export interface Props {
   href?: string;
   variant?: 'stacked' | 'nav' | 'banner' | 'chip';
-  color?: 'coral' | 'crimson' | 'orange' | 'green' | 'plum' | 'brown' | 'cyan' | 'grey';
+  color?: 'coral' | 'crimson' | 'orange' | 'green' | 'plum' | 'brown' | 'cyan' | 'grey' | 'darkblue' | 'lightblue' | 'sand';
   external?: boolean;
   class?: string;
   target?: string;
@@ -30,6 +30,9 @@ const colorClasses: Record<string, string> = {
   brown: 'bg-ffp-brown',
   cyan: 'bg-ffp-cyan',
   grey: 'bg-ffp-grey !text-[var(--color-btn-grey-text)]',
+  darkblue: 'bg-ffp-darkblue',
+  lightblue: 'bg-ffp-lightblue !text-[var(--color-bg-base)]',
+  sand: 'bg-ffp-sand !text-[var(--color-bg-base)]',
 };
 
 const variantClasses: Record<string, string> = {

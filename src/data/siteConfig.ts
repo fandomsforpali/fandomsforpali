@@ -1,7 +1,7 @@
 export interface ButtonItem {
   label: string;
   href: string;
-  color: 'coral' | 'crimson' | 'orange' | 'green' | 'plum' | 'brown' | 'cyan' | 'grey';
+  color: 'coral' | 'crimson' | 'orange' | 'green' | 'plum' | 'brown' | 'cyan' | 'grey' | 'darkblue' | 'lightblue' | 'sand';
   icon?: string;
   external?: boolean;
 }
@@ -272,6 +272,23 @@ export const siteConfig = {
       'https://www.gofundme.com/f/stand-with-wijdan-help-her-win-the-fight-against-cancer?attribution_id=sl:c29b9e82-8bf4-4107-970f-acee21d9f09c&lang=en_US&utm_campaign=man_sharesheet_dash&utm_medium=customer&utm_source=copy_link',
     summary:
       'Wijdan is a young Palestinian girl undergoing critical, life-saving cancer treatment amidst extreme hardship and blockade. Every donation through our campaign goes directly toward supporting her treatment, medication, and family survival.',
+  },
+
+  mohammed: {
+    name: 'Mohammed & Family',
+    title: "Urgent: Help Mohammed's Family Survive and Rebuild",
+    image: 'https://prod-chuffedcontent.s3.amazonaws.com/assets/LhhpscnC2vxJ7Wtu6zpMUjQzFgdlAaH8yVOHaBOi.jpg',
+    chuffedUrl: 'https://chuffed.org/project/help-mohammedf',
+    summary:
+      "Mohammed is a 23-year-old accounting student from Gaza. Over the course of the ongoing genocide, Mohammed and his family have lost everything: their home was completely bombed and destroyed, his university was demolished, his father was seriously injured, and beloved family members, friends, and their pet cat were lost.",
+    story:
+      "Now, Mohammed and his family live in a makeshift tent that offers no protection against the harsh winter cold, wind, and rain. With basic food, potable water, and medical care for his father scarce, this fundraiser is a vital lifeline to provide essential winter supplies, food, urgent medical care, and aid toward their safety and future.",
+    urgentNeeds: [
+      'Emergency food, clean drinking water, and daily nutrition supplies.',
+      'Medical treatment and rehabilitation for his seriously injured father.',
+      'Winterization supplies, warm blankets, and reinforced shelter from the cold.',
+      'Humanitarian aid towards family safety, relocation, and rebuilding their future.'
+    ],
   },
 
   whatWeDo: {

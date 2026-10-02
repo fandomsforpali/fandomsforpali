@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/common/SectionHeader.astro';
+import Button from '../components/common/Button.astro';
+import DottedDivider from '../components/common/DottedDivider.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { mohammed } = siteConfig;
+---
+
+<Layout title={mohammed.title} description={mohammed.summary}>
+  <div class="w-full max-w-[44rem] flex flex-col items-center text-center px-4">
+    <!-- Header -->
+    <SectionHeader
+      pretitle="- Direct Aid Fundraiser -"
+      title={mohammed.name}
+      subtitle={mohammed.title}
+      level={1}
+    />
+
+    <!-- Mohammed's Campaign Hero Image -->
+    <div class="my-6 max-w-lg w-full rounded-3xl overflow-hidden shadow-carrd-btn border-4 border-cream/30">
+      <img
+        src={mohammed.image}
+        alt="Photo of Mohammed and his family in Gaza"
+        class="w-full h-auto object-cover block"
+        loading="eager"
+      />
+    </div>
+
+    <!-- Personal Quote / Message from Mohammed -->
+    <div class="w-full rounded-2xl bg-black/35 p-6 my-4 border border-cream/25 shadow-carrd-btn text-left text-cream leading-relaxed">
+      <div class="flex items-center gap-2 mb-3">
+        <span class="text-xl">💬</span>
+        <h2 class="text-lg sm:text-xl font-bold text-cream">A Message from Mohammed</h2>
+      </div>
+      <blockquote class="italic text-base sm:text-lg text-cream/95 pl-4 border-l-2 border-ffp-lime my-2">
+        &ldquo;Hello friends, I'm Mohammed from Gaza, I'm 23 years old, a university student studying accounting. We endured a two-year war of genocide during which we lost everything. Our house was completely destroyed, and I lost my university and everything else in Gaza. My father was seriously injured when our house was destroyed, and I lost some of my family and friends. I also lost my cat. Now we live in a tent that doesn't protect us from the winter or the cold.&rdquo;
+      </blockquote>
+      <p class="text-sm sm:text-base text-cream/85 mt-4">
+        {mohammed.story}
+      </p>
+    </div>
+
+    <!-- Urgent Needs Checklist -->
+    <div class="w-full rounded-2xl bg-black/25 p-6 my-4 border border-cream/20 shadow-carrd-btn text-left text-cream">
+      <h3 class="text-base sm:text-lg font-bold text-ffp-orange mb-3 flex items-center gap-2">
+        <span>⚠️</span> How Your Donations Help
+      </h3>
+      <ul class="space-y-2.5 text-sm sm:text-base text-cream/90">
+        {
+          mohammed.urgentNeeds.map((need) => (
+            <li class="flex items-start gap-2.5">
+              <span class="text-ffp-green font-bold">✓</span>
+              <span>{need}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Direct Donation Call to Action -->
+    <div class="w-full flex flex-col items-center gap-3 my-6">
+      <Button
+        href={mohammed.chuffedUrl}
+        variant="stacked"
+        color="crimson"
+        external={true}
+      >
+        ❤️ Donate to Mohammed's Family (Chuffed)
+      </Button>
+
+      <p class="text-xs text-cream/70 max-w-md">
+        100% of contributions through this fundraiser go directly to Mohammed and his family via Chuffed. FFP does not hold or handle donations.
+      </p>
+    </div>
+
+    <DottedDivider />
+
+    <!-- Navigation actions -->
+    <div class="flex flex-wrap items-center justify-center gap-3 my-4">
+      <Button href="/" variant="nav" color="plum">
+        &larr; Back to Home
+      </Button>
+      <Button href="/wijdan" variant="nav" color="sand">
+        About Wijdan &amp; Family &rarr;
+      </Button>
+    </div>
+  </div>
+</Layout>
