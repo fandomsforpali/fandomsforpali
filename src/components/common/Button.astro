@@ -4,6 +4,8 @@ export interface Props {
   variant?: 'stacked' | 'nav' | 'banner' | 'chip';
   color?: 'coral' | 'crimson' | 'orange' | 'green' | 'plum' | 'brown' | 'cyan' | 'grey' | 'darkblue' | 'lightblue' | 'sand';
   external?: boolean;
+  disabled?: boolean;
+  disable?: boolean;
   class?: string;
   target?: string;
   rel?: string;
@@ -15,11 +17,15 @@ const {
   variant = 'stacked',
   color = 'coral',
   external = false,
+  disabled = false,
+  disable = false,
   class: customClass = '',
   target: customTarget,
   rel: customRel,
   role = 'button',
 } = Astro.props;
+
+const isDisabled = disabled || disable;
 
 const colorClasses: Record<string, string> = {
   coral: 'bg-ffp-coral',
@@ -47,24 +53,29 @@ const variantClasses: Record<string, string> = {
 const baseClasses =
   'relative inline-flex items-center justify-center text-center rounded-carrd-btn shadow-carrd-btn overflow-hidden text-ellipsis whitespace-nowrap transition-transform duration-250 ease-in-out hover:scale-[1.025] active:scale-[0.98] select-none';
 
+const disabledClasses =
+  'opacity-65 !cursor-not-allowed !pointer-events-none hover:!scale-100 active:!scale-100 filter saturate-75';
+
 const gradientOverlay =
   'before:content-[""] before:absolute before:inset-0 before:bg-gradient-to-tr before:from-[var(--color-btn-overlay-start)] before:to-[var(--color-btn-overlay-end)] before:pointer-events-none';
 
 const computedColor = colorClasses[color] || colorClasses.coral;
 const computedVariant = variantClasses[variant] || variantClasses.stacked;
 
-const target = customTarget || (external ? '_blank' : undefined);
-const rel = customRel || (external ? 'noopener noreferrer' : undefined);
+const target = isDisabled ? undefined : (customTarget || (external ? '_blank' : undefined));
+const rel = isDisabled ? undefined : (customRel || (external ? 'noopener noreferrer' : undefined));
 
-const Tag = href ? 'a' : 'button';
+const Tag = isDisabled ? 'button' : (href ? 'a' : 'button');
 ---
 
 <Tag
-  href={href}
+  href={isDisabled ? undefined : href}
   target={target}
   rel={rel}
   role={role}
-  class={`${baseClasses} ${gradientOverlay} ${computedColor} ${computedVariant} ${customClass}`}
+  disabled={isDisabled ? true : undefined}
+  aria-disabled={isDisabled ? 'true' : undefined}
+  class={`${baseClasses} ${gradientOverlay} ${computedColor} ${computedVariant} ${isDisabled ? disabledClasses : ''} ${customClass}`}
 >
   <span class="relative z-10 flex items-center justify-center gap-2">
     <slot />

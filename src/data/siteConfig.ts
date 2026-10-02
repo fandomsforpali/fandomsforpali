@@ -193,7 +193,7 @@ export const siteConfig = {
     rolesOverview:
       'Right now, we are recruiting Directors, Leads, and volunteers across all fandom communities to shape the creative and operational vision for Demigods for Palestine.',
     donationLink:
-      'https://www.gofundme.com/f/stand-with-wijdan-help-her-win-the-fight-against-cancer?attribution_id=sl:c29b9e82-8bf4-4107-970f-acee21d9f09c&lang=en_US&utm_campaign=man_sharesheet_dash&utm_medium=customer&utm_source=copy_link',
+      'https://chuffed.org/project/help-mohammedf',
     comicPanels: [
       {
         src: '/assets/campaign-jacksonbug/comic_ffp1.png',
@@ -265,13 +265,13 @@ export const siteConfig = {
   },
 
   wijdan: {
-    name: 'Wijdan & Family',
+    name: 'Wijdan',
     title: 'Stand with Wijdan: Help Her Win the Fight Against Cancer',
     image: '/assets/images/image04.jpg',
     gofundmeUrl:
       'https://www.gofundme.com/f/stand-with-wijdan-help-her-win-the-fight-against-cancer?attribution_id=sl:c29b9e82-8bf4-4107-970f-acee21d9f09c&lang=en_US&utm_campaign=man_sharesheet_dash&utm_medium=customer&utm_source=copy_link',
     summary:
-      'Wijdan is a young Palestinian girl undergoing critical, life-saving cancer treatment amidst extreme hardship and blockade. Every donation through our campaign goes directly toward supporting her treatment, medication, and family survival.',
+      'Wijdan is a 5-year-old Palestinian girl from Gaza who has a rare type of cancer known as a fibrosarcoma. She and her family are facing severe poverty and homelessness on top of the damage inflicted by the genocide, which resulted in inconsistent treatment to her condition. Her health is deteriorating day by day, and her family is waiting for the opportunity to travel abroad to get her the help she needs. Wijdan’s family is from the city of Rafah, and they are composed of 3 daughters, one son, and the parents.',
   },
 
   mohammed: {
