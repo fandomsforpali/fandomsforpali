@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import SectionHeader from '../components/common/SectionHeader.astro';
 import Button from '../components/common/Button.astro';
 import DottedDivider from '../components/common/DottedDivider.astro';
+import Icon from '../components/common/Icon.astro';
 import { siteConfig } from '../data/siteConfig';
 
 const { moderators } = siteConfig;
@@ -17,17 +18,38 @@ const { moderators } = siteConfig;
       level={1}
     />
 
-    <!-- Team Roles List -->
-    <div class="w-full space-y-4 my-6 text-left">
+    <!-- Team Members Grid -->
+    <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-4 my-6 text-left">
       {
-        moderators.roles.map((item) => (
-          <div class="bg-black/25 rounded-2xl p-5 sm:p-6 border border-cream/20 shadow-carrd-btn">
-            <h2 class="text-cream text-lg sm:text-xl font-bold mb-2">
-              {item.role}
-            </h2>
-            <p class="text-cream/90 text-sm sm:text-base leading-relaxed">
-              {item.description}
-            </p>
+        moderators.members.map((member) => (
+          <div class="bg-card-bg rounded-carrd-card p-5 sm:p-6 border border-card-border shadow-carrd-btn flex flex-col justify-between transition-all duration-200 hover:border-[var(--color-card-hover-border)]">
+            <div>
+              <h2 class="text-cream text-lg sm:text-xl font-bold">
+                {member.name}
+              </h2>
+              <p class="text-cream/80 text-sm sm:text-base font-medium mt-1">
+                {member.role}
+              </p>
+            </div>
+
+            {member.socials && member.socials.length > 0 && (
+              <ul class="flex flex-wrap items-center gap-2 mt-4 list-none p-0" aria-label={`Social links for ${member.name}`}>
+                {member.socials.map((social) => (
+                  <li>
+                    <a
+                      href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.ariaLabel}
+                      title={social.ariaLabel}
+                      class="w-9 h-9 rounded-full bg-cream/15 hover:bg-cream text-cream hover:text-ffp-plum flex items-center justify-center shadow-carrd-btn transition-all duration-200 hover:scale-110"
+                    >
+                      <Icon name={social.platform} size={18} />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         ))
       }

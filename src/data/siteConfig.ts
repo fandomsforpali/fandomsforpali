@@ -32,6 +32,18 @@ export interface GalleryItem {
   alt: string;
 }
 
+export interface TeamMemberSocial {
+  platform: 'instagram' | 'tumblr' | 'tiktok' | 'ao3' | 'patreon' | 'twitter' | 'link';
+  url: string;
+  ariaLabel: string;
+}
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  socials?: TeamMemberSocial[];
+}
+
 export const siteConfig = {
   title: 'Fandoms for Palestine',
   tagline: 'Uniting fans of all things fiction to help those in Palestine',
@@ -305,20 +317,117 @@ export const siteConfig = {
   moderators: {
     title: 'Our Team',
     subtitle: 'The volunteer organizers and moderators behind Fandoms for Palestine',
-    roles: [
+    members: [
       {
-        role: 'Campaign Organizers',
-        description: 'Coordinating events, artist submissions, commission intake, and donation verification.',
+        name: 'Beetlez (@Beeetlezz)',
+        role: 'Head Mod',
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/beeetlezz/',
+            ariaLabel: 'Beetlez on Instagram',
+          },
+          {
+            platform: 'tumblr',
+            url: 'https://www.tumblr.com/beeetlezz',
+            ariaLabel: 'Beetlez on Tumblr',
+          },
+          {
+            platform: 'tiktok',
+            url: 'https://www.tiktok.com/@beetlezart?lang=en',
+            ariaLabel: 'Beetlez on TikTok',
+          },
+        ],
       },
       {
-        role: 'Discord Moderators',
-        description: 'Maintaining a safe, supportive, and active space for fans and creators in our server.',
+        name: 'Andrea (@trebleclef_zm)',
+        role: 'Writing Mod',
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/trebleclef_zm/',
+            ariaLabel: 'Andrea on Instagram',
+          },
+          {
+            platform: 'ao3',
+            url: 'https://archiveofourown.org/users/trebleclef_zm',
+            ariaLabel: 'Andrea on Archive of Our Own',
+          },
+        ],
       },
       {
-        role: 'Communications & Socials',
-        description: 'Managing announcements, updates, and creator spotlights across social platforms.',
+        name: 'Yasmeen (@chaton_buginette)',
+        role: 'Social Media & PR Mod',
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/chaton_buginette/',
+            ariaLabel: 'Yasmeen on Instagram',
+          },
+        ],
       },
-    ],
+      {
+        name: 'Shay (@art_the_f_up)',
+        role: 'Art Mod',
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/art_the_f_up/',
+            ariaLabel: 'Shay on Instagram',
+          },
+          {
+            platform: 'tumblr',
+            url: 'https://www.tumblr.com/art-the-f-up',
+            ariaLabel: 'Shay on Tumblr',
+          },
+          {
+            platform: 'patreon',
+            url: 'https://www.patreon.com/artthefup',
+            ariaLabel: 'Shay on Patreon',
+          },
+        ],
+      },
+      {
+        name: 'Cheesyakumas',
+        role: 'Graphic design & Organizational Mod',
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/akumatizedcamembert/',
+            ariaLabel: 'Cheesyakumas on Instagram',
+          },
+          {
+            platform: 'tumblr',
+            url: 'https://cheesyakumas.tumblr.com/',
+            ariaLabel: 'Cheesyakumas on Tumblr',
+          },
+        ],
+      },
+      {
+        name: 'Tuturu',
+        role: 'Organizational Mod',
+      },
+      {
+        name: 'Kyle (cardiac_agreste)',
+        role: 'Organizational Mod',
+        socials: [
+          {
+            platform: 'tumblr',
+            url: 'https://tumblr.com/cardiac-agreste',
+            ariaLabel: 'Kyle (cardiac_agreste) on Tumblr',
+          },
+          {
+            platform: 'ao3',
+            url: 'https://archiveofourown.org/users/KPG',
+            ariaLabel: 'Kyle (cardiac_agreste) on Archive of Our Own',
+          },
+        ],
+      },
+      {
+        name: 'Louann',
+        role: 'General Art Assistant',
+      },
+    ] as TeamMember[],
   },
 
   faq: [
