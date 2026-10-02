@@ -1,0 +1,49 @@
+---
+export interface Props {
+  src: string;
+  alt: string;
+  href?: string;
+  external?: boolean;
+  class?: string;
+  rounded?: 'none' | 'md' | 'xl' | '3xl';
+  dashedBorder?: boolean;
+}
+
+const {
+  src,
+  alt,
+  href,
+  external = false,
+  class: customClass = '',
+  rounded = 'md',
+  dashedBorder = false,
+} = Astro.props;
+
+const roundedClasses: Record<string, string> = {
+  none: 'rounded-none',
+  md: 'rounded-lg',
+  xl: 'rounded-2xl',
+  '3xl': 'rounded-[3rem]',
+};
+
+const Tag = href ? 'a' : 'div';
+const target = external ? '_blank' : undefined;
+const rel = external ? 'noopener noreferrer' : undefined;
+---
+
+<div class={`block w-full my-4 ${customClass}`}>
+  <Tag
+    href={href}
+    target={target}
+    rel={rel}
+    class={`block w-full overflow-hidden transition-transform duration-250 ${href ? 'hover:scale-[1.015]' : ''} ${roundedClasses[rounded]} ${dashedBorder ? 'border-[5px] border-dashed border-cream' : ''}`}
+  >
+    <img
+      src={src}
+      alt={alt}
+      class="w-full h-auto block object-cover"
+      loading="lazy"
+    />
+  </Tag>
+</div>
+

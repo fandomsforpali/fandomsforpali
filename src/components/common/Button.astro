@@ -1,0 +1,70 @@
+---
+export interface Props {
+  href?: string;
+  variant?: 'stacked' | 'nav' | 'banner' | 'chip';
+  color?: 'coral' | 'crimson' | 'orange' | 'green' | 'plum' | 'brown' | 'cyan' | 'grey';
+  external?: boolean;
+  class?: string;
+  target?: string;
+  rel?: string;
+  role?: string;
+}
+
+const {
+  href,
+  variant = 'stacked',
+  color = 'coral',
+  external = false,
+  class: customClass = '',
+  target: customTarget,
+  rel: customRel,
+  role = 'button',
+} = Astro.props;
+
+const colorClasses: Record<string, string> = {
+  coral: 'bg-[#E87676]',
+  crimson: 'bg-[#A82727]',
+  orange: 'bg-[#F27935]',
+  green: 'bg-[#27A83C]',
+  plum: 'bg-[#633C3C]',
+  brown: 'bg-[#9E5D4F]',
+  cyan: 'bg-[#71D5E3]',
+  grey: 'bg-[#A1A1A1] !text-[#454545]',
+};
+
+const variantClasses: Record<string, string> = {
+  stacked:
+    'w-full max-w-[28rem] h-[3.75rem] leading-[3.75rem] px-[1.875rem] text-[1rem] font-semibold text-cream',
+  nav: 'w-auto h-[2.375rem] leading-[2.375rem] px-[1.1875rem] text-[0.95rem] font-semibold text-cream-dark',
+  banner:
+    'w-[22.5rem] max-w-full h-[3.625rem] leading-[3.625rem] px-2 text-[1rem] font-semibold text-cream-dark',
+  chip: 'w-auto h-[1.75rem] leading-[1.75rem] px-[0.875rem] text-[0.875rem] font-bold text-cream',
+};
+
+const baseClasses =
+  'relative inline-flex items-center justify-center text-center rounded-[2rem] shadow-carrd-btn overflow-hidden text-ellipsis whitespace-nowrap transition-transform duration-250 ease-in-out hover:scale-[1.025] active:scale-[0.98] select-none';
+
+const gradientOverlay =
+  'before:content-[""] before:absolute before:inset-0 before:bg-gradient-to-tr before:from-[rgba(255,92,92,0.412)] before:to-[rgba(255,163,163,0.008)] before:pointer-events-none';
+
+const computedColor = colorClasses[color] || colorClasses.coral;
+const computedVariant = variantClasses[variant] || variantClasses.stacked;
+
+const target = customTarget || (external ? '_blank' : undefined);
+const rel = customRel || (external ? 'noopener noreferrer' : undefined);
+
+const Tag = href ? 'a' : 'button';
+---
+
+<Tag
+  href={href}
+  target={target}
+  rel={rel}
+  role={role}
+  class={`${baseClasses} ${gradientOverlay} ${computedColor} ${computedVariant} ${customClass}`}
+>
+  <span class="relative z-10 flex items-center justify-center gap-2">
+    <slot />
+  </span>
+</Tag>
+

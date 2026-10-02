@@ -1,0 +1,29 @@
+---
+import { siteConfig } from '../../data/siteConfig';
+
+export interface Props {
+  class?: string;
+}
+
+const { class: customClass = '' } = Astro.props;
+---
+
+<footer class={`w-full max-w-[57rem] px-4 py-8 text-center select-none text-cream/75 text-xs font-medium ${customClass}`}>
+  <div class="flex flex-col items-center justify-center gap-2">
+    <p>
+      {siteConfig.title} &bull; Uniting fiction communities for humanitarian aid in Palestine
+    </p>
+    <div class="flex items-center gap-3 text-cream/60 text-[0.75rem]">
+      <a href="/" class="hover:underline hover:text-cream transition-colors">Home</a>
+      <span>&bull;</span>
+      <a href="/currentcampaign" class="hover:underline hover:text-cream transition-colors">Campaign</a>
+      <span>&bull;</span>
+      <a href="/wijdan" class="hover:underline hover:text-cream transition-colors">Wijdan</a>
+      <span>&bull;</span>
+      <a href="/faq" class="hover:underline hover:text-cream transition-colors">FAQ</a>
+      <span>&bull;</span>
+      <a href="https://discord.gg/hgn2AySnjq" target="_blank" rel="noopener noreferrer" class="hover:underline hover:text-cream transition-colors">Discord</a>
+    </div>
+  </div>
+</footer>
+

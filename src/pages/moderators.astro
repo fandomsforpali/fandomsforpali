@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/common/SectionHeader.astro';
+import Button from '../components/common/Button.astro';
+import DottedDivider from '../components/common/DottedDivider.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { moderators } = siteConfig;
+---
+
+<Layout title={moderators.title} description={moderators.subtitle}>
+  <div class="w-full max-w-[46rem] flex flex-col items-center text-center px-4">
+    <SectionHeader
+      pretitle="- Community & Coordination -"
+      title={moderators.title}
+      subtitle={moderators.subtitle}
+      level={1}
+    />
+
+    <!-- Team Roles List -->
+    <div class="w-full space-y-4 my-6 text-left">
+      {
+        moderators.roles.map((item) => (
+          <div class="bg-black/25 rounded-2xl p-5 sm:p-6 border border-cream/20 shadow-carrd-btn">
+            <h2 class="text-cream text-lg sm:text-xl font-bold mb-2">
+              {item.role}
+            </h2>
+            <p class="text-cream/90 text-sm sm:text-base leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="text-cream text-sm sm:text-base my-2 max-w-lg">
+      Interested in volunteering with us or joining the moderation team? Connect with us on Discord!
+    </p>
+
+    <div class="my-4">
+      <Button
+        href="https://discord.gg/hgn2AySnjq"
+        variant="stacked"
+        color="orange"
+        external={true}
+      >
+        Connect on Discord
+      </Button>
+    </div>
+
+    <DottedDivider />
+
+    <div class="my-2">
+      <Button href="/" variant="nav" color="green">
+        &larr; Back to Home
+      </Button>
+    </div>
+  </div>
+</Layout>
+

@@ -1,0 +1,20 @@
+---
+export interface Props {
+  color?: string;
+  class?: string;
+}
+
+const { color = '#FEFFC4', class: customClass = '' } = Astro.props;
+---
+
+<div
+  class={`w-full my-6 flex items-center justify-center ${customClass}`}
+  role="separator"
+>
+  <div
+    class="w-full h-[6px] border-t-[6px] border-dotted"
+    style={{ borderColor: color }}
+  >
+  </div>
+</div>
+

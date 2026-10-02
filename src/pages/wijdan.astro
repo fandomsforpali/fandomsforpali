@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/common/SectionHeader.astro';
+import Button from '../components/common/Button.astro';
+import DottedDivider from '../components/common/DottedDivider.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { wijdan } = siteConfig;
+---
+
+<Layout title={wijdan.title} description={wijdan.summary}>
+  <div class="w-full max-w-[42rem] flex flex-col items-center text-center px-4">
+    <SectionHeader
+      pretitle="- Direct Aid Fundraiser -"
+      title={wijdan.name}
+      subtitle={wijdan.title}
+      level={1}
+    />
+
+    <!-- Wijdan's portrait -->
+    <div class="my-6 max-w-md w-full rounded-3xl overflow-hidden shadow-carrd-btn border-4 border-cream/30">
+      <img
+        src={wijdan.image}
+        alt="Portrait of Wijdan"
+        class="w-full h-auto object-cover block"
+      />
+    </div>
+
+    <!-- Story Card -->
+    <div class="bg-black/25 rounded-2xl p-6 my-4 border border-cream/20 shadow-carrd-btn text-left text-cream leading-relaxed">
+      <p class="text-base sm:text-lg mb-4">
+        {wijdan.summary}
+      </p>
+      <p class="text-sm sm:text-base text-cream/90">
+        Medical care, access to specialized oncology medication, and safe living conditions for displaced Palestinian families are severely compromised. Every single dollar raised through FFP campaigns goes directly to verified medical bills, nourishment, and family survival.
+      </p>
+    </div>
+
+    <!-- Direct GoFundMe Call to Action -->
+    <div class="w-full flex justify-center my-6">
+      <Button
+        href={wijdan.gofundmeUrl}
+        variant="stacked"
+        color="crimson"
+        external={true}
+      >
+        ❤️ Stand with Wijdan on GoFundMe
+      </Button>
+    </div>
+
+    <DottedDivider />
+
+    <div class="my-2">
+      <Button href="/" variant="nav" color="plum">
+        &larr; Back to Home
+      </Button>
+    </div>
+  </div>
+</Layout>
+

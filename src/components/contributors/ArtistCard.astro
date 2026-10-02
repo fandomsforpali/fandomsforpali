@@ -1,0 +1,152 @@
+---
+import Icon from '../common/Icon.astro';
+import type { Contributor } from '../../data/contributors';
+
+export interface Props {
+  artist: Contributor;
+  class?: string;
+}
+
+const { artist, class: customClass = '' } = Astro.props;
+
+// Helper to sanitize icon names
+const getPlatformIcon = (platform: string) => {
+  const p = platform.toLowerCase().trim();
+  if (p.includes('instagram')) return 'instagram';
+  if (p.includes('tumblr')) return 'tumblr';
+  if (p.includes('tiktok')) return 'tiktok';
+  if (p.includes('archive') || p.includes('ao3')) return 'archive of our own';
+  if (p.includes('linktree')) return 'linktree';
+  return 'external-link';
+};
+---
+
+<article
+  class={`w-full bg-black/30 rounded-3xl p-6 sm:p-7 border border-cream/20 shadow-carrd-btn flex flex-col gap-5 text-left text-cream transition-all duration-200 hover:border-cream/40 ${customClass}`}
+  id={`artist-${artist.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+>
+  <!-- Artist Header & Pronouns -->
+  <div class="flex flex-wrap items-baseline justify-between gap-2 border-b border-cream/15 pb-3">
+    <div class="flex flex-wrap items-baseline gap-2">
+      <h3 class="text-2xl sm:text-3xl font-extrabold text-cream drop-shadow-carrd-heading">
+        {artist.name}
+      </h3>
+      {artist.pronouns && (
+        <span class="text-sm sm:text-base font-normal text-cream/75">
+          {artist.pronouns}
+        </span>
+      )}
+    </div>
+
+    <!-- Social Links -->
+    {artist.socialLinks.length > 0 && (
+      <ul class="flex flex-wrap items-center gap-2 list-none p-0 m-0">
+        {artist.socialLinks.map((social) => (
+          <li>
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-cream/15 hover:bg-cream hover:text-ffp-plum text-cream text-xs font-semibold shadow-carrd-btn transition-all duration-250 hover:scale-105"
+            >
+              <Icon name={getPlatformIcon(social.platform)} size={13} />
+              <span>{social.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+
+  <!-- Artwork Showcase / Slideshow Images -->
+  {artist.images.length > 0 && (
+    <div class="w-full">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
+        {artist.images.map((img, idx) => (
+          <a
+            href={img}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group relative block aspect-square rounded-xl overflow-hidden border-2 border-cream/20 bg-black/40 shadow-sm hover:border-cream/60 transition-transform duration-250 hover:scale-[1.02]"
+            title={`View sample artwork by ${artist.name}`}
+          >
+            <img
+              src={img}
+              alt={`Sample artwork ${idx + 1} by ${artist.name}`}
+              class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+            />
+          </a>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- Available Slots -->
+  {artist.slots.length > 0 && (
+    <div class="flex flex-col gap-2">
+      <span class="text-xs uppercase tracking-wider font-bold text-cream/80">
+        Available Slots
+      </span>
+      <div class="flex flex-wrap gap-2">
+        {artist.slots.map((slot) => (
+          <span class="inline-block px-3 py-1 rounded-full bg-ffp-coral text-cream text-xs font-semibold shadow-sm select-none">
+            {slot}
+          </span>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- Add-ons -->
+  {artist.addOns.length > 0 && (
+    <div class="flex flex-col gap-1.5 bg-black/20 rounded-xl p-3.5 border border-cream/10 text-xs sm:text-sm">
+      <span class="font-bold text-cream/90 uppercase tracking-wider text-[0.7rem]">
+        Add-ons:
+      </span>
+      <ul class="list-disc list-inside space-y-1 text-cream/85">
+        {artist.addOns.map((addon) => (
+          <li>{addon}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  <!-- Will Draw / Won't Draw Comparison -->
+  {(artist.will.length > 0 || artist.wont.length > 0) && (
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm">
+      <!-- Will Draw -->
+      <div class="bg-black/20 rounded-xl p-3.5 border border-ffp-green/30">
+        <h4 class="font-bold text-ffp-lime uppercase tracking-wider text-[0.75rem] mb-2 flex items-center gap-1.5">
+          <span>&#10003;</span>
+          <span>Will Draw</span>
+        </h4>
+        <ul class="space-y-1 text-cream/90">
+          {artist.will.map((item) => (
+            <li class="flex items-start gap-1.5">
+              <span class="text-ffp-lime font-bold">&bull;</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Won't Draw -->
+      <div class="bg-black/20 rounded-xl p-3.5 border border-ffp-crimson/30">
+        <h4 class="font-bold text-ffp-coral uppercase tracking-wider text-[0.75rem] mb-2 flex items-center gap-1.5">
+          <span>&#10005;</span>
+          <span>Won't Draw</span>
+        </h4>
+        <ul class="space-y-1 text-cream/75">
+          {artist.wont.map((item) => (
+            <li class="flex items-start gap-1.5">
+              <span class="text-ffp-coral font-bold">&bull;</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  )}
+</article>
+

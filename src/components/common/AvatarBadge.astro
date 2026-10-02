@@ -1,0 +1,36 @@
+---
+export interface Props {
+  src: string;
+  alt?: string;
+  href?: string;
+  size?: string;
+  class?: string;
+}
+
+const {
+  src,
+  alt = 'Fandoms for Palestine',
+  href,
+  size = 'w-[8.375rem] h-[8.375rem]',
+  class: customClass = '',
+} = Astro.props;
+
+const Tag = href ? 'a' : 'div';
+---
+
+<div class={`inline-block my-2 ${customClass}`}>
+  <Tag
+    href={href}
+    class={`block ${size} rounded-full border-[11px] border-ffp-lime shadow-carrd-avatar overflow-hidden bg-white transition-transform duration-250 hover:scale-105 select-none`}
+  >
+    <img
+      src={src}
+      alt={alt}
+      class="w-full h-full object-cover object-center"
+      loading="eager"
+      width={251}
+      height={251}
+    />
+  </Tag>
+</div>
+

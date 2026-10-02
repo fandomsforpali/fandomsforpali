@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/common/SectionHeader.astro';
+import BannerCard from '../components/common/BannerCard.astro';
+import Button from '../components/common/Button.astro';
+import ButtonList from '../components/common/ButtonList.astro';
+import DottedDivider from '../components/common/DottedDivider.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { campaign } = siteConfig;
+---
+
+<Layout title={campaign.title} description={campaign.description}>
+  <div class="w-full max-w-[54rem] flex flex-col items-center text-center px-4">
+    <SectionHeader
+      pretitle="- Current Campaign -"
+      title={campaign.title}
+      subtitle={campaign.subtitle}
+      level={1}
+    />
+
+    <p class="text-cream text-base md:text-lg max-w-2xl my-4 drop-shadow-carrd-subheading">
+      {campaign.description}
+    </p>
+
+    <!-- Action Buttons -->
+    <ButtonList direction="row" gap="sm" class="my-4">
+      <li>
+        <Button href={campaign.donationLink} variant="nav" color="crimson" external={true}>
+          Donate to Wijdan (GoFundMe)
+        </Button>
+      </li>
+      <li>
+        <Button href={campaign.commissionFormLink} variant="nav" color="green" external={true}>
+          Submit Commission Request
+        </Button>
+      </li>
+      <li>
+        <Button href={campaign.raffleFormLink} variant="nav" color="orange" external={true}>
+          Enter Art Raffle
+        </Button>
+      </li>
+    </ButtonList>
+
+    <DottedDivider />
+
+    <!-- Commission Pricing Table & Image -->
+    <div class="w-full my-4">
+      <SectionHeader title="Commission Pricing Guide" level={2} />
+      <BannerCard
+        src={campaign.image}
+        alt="Miraculers for Palestine Commission Tiers: Sketch, Lineart, Flat Color, Full Render"
+        rounded="xl"
+      />
+
+      <!-- Structured Accessible Pricing Table -->
+      <div class="w-full overflow-x-auto my-6 rounded-2xl bg-black/20 p-4 shadow-carrd-btn border border-cream/20">
+        <table class="w-full text-cream text-center border-collapse">
+          <thead>
+            <tr class="border-b border-cream/30 text-sm sm:text-base font-bold text-cream-dark uppercase">
+              <th class="py-3 px-2 text-left">Tier</th>
+              <th class="py-3 px-2">Sketch</th>
+              <th class="py-3 px-2">Lineart</th>
+              <th class="py-3 px-2">Flat Color</th>
+              <th class="py-3 px-2">Full Render</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm sm:text-base font-medium">
+            {
+              campaign.pricingTiers.map((tier) => (
+                <tr class="border-b border-cream/15 last:border-0 hover:bg-cream/10 transition-colors">
+                  <td class="py-3 px-2 text-left font-bold text-cream">{tier.category}</td>
+                  <td class="py-3 px-2">{tier.sketch}</td>
+                  <td class="py-3 px-2">{tier.lineart}</td>
+                  <td class="py-3 px-2 font-semibold text-ffp-lime">{tier.flatColor}</td>
+                  <td class="py-3 px-2 font-bold text-cream-dark">{tier.fullRender}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <DottedDivider />
+
+    <div class="my-4">
+      <Button href="/" variant="nav" color="plum">
+        &larr; Back to Home
+      </Button>
+    </div>
+  </div>
+</Layout>
+

@@ -1,0 +1,47 @@
+---
+import Icon from '../common/Icon.astro';
+import Button from '../common/Button.astro';
+import { siteConfig } from '../../data/siteConfig';
+
+export interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+const isHome = currentPath === '/' || currentPath === '';
+---
+
+<header class="w-full max-w-[57rem] px-4 py-3 flex flex-wrap items-center justify-between gap-4 z-20">
+  <!-- Home link button -->
+  <div>
+    <a
+      href={siteConfig.header.home.href}
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cream/15 text-cream hover:bg-cream hover:text-ffp-plum hover:scale-105 active:scale-95 transition-all duration-250 shadow-carrd-btn text-sm font-semibold select-none"
+      aria-label="Return to Home page"
+    >
+      <Icon name="home" size={18} />
+      <span>{siteConfig.header.home.label}</span>
+    </a>
+  </div>
+
+  <!-- Quick Action Navigation buttons -->
+  <nav aria-label="Quick actions">
+    <ul class="flex flex-wrap items-center justify-end gap-2.5 list-none p-0 m-0">
+      {
+        siteConfig.header.actions.map((action) => (
+          <li>
+            <Button
+              href={action.href}
+              variant="nav"
+              color={action.color}
+              external={action.external}
+            >
+              {action.label}
+            </Button>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+

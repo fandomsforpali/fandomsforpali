@@ -1,0 +1,107 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TwoColumn from '../components/layout/TwoColumn.astro';
+import AvatarBadge from '../components/common/AvatarBadge.astro';
+import BannerCard from '../components/common/BannerCard.astro';
+import Button from '../components/common/Button.astro';
+import ButtonList from '../components/common/ButtonList.astro';
+import DottedDivider from '../components/common/DottedDivider.astro';
+import SectionHeader from '../components/common/SectionHeader.astro';
+import SocialRow from '../components/sections/SocialRow.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { landing } = siteConfig;
+---
+
+<Layout>
+  <TwoColumn>
+    <!-- Left Column: Branding & Raffle Highlight -->
+    <Fragment slot="left">
+      <AvatarBadge
+        src={landing.avatar.src}
+        alt={landing.avatar.alt}
+        href={landing.avatar.href}
+      />
+
+      <h1 class="text-cream text-4xl sm:text-5xl md:text-[4rem] font-extrabold tracking-tight drop-shadow-carrd-heading leading-[1.05] my-2 select-none">
+        {siteConfig.title}
+      </h1>
+
+      <p class="text-cream text-base md:text-lg font-semibold drop-shadow-carrd-subheading max-w-md my-1 select-none">
+        {siteConfig.tagline}
+      </p>
+
+      <DottedDivider />
+
+      <BannerCard
+        src={landing.banner.src}
+        alt={landing.banner.alt}
+        href={landing.banner.href}
+        external={landing.banner.external}
+      />
+
+      <Button
+        href={landing.raffleButton.href}
+        variant="banner"
+        color={landing.raffleButton.color}
+        external={landing.raffleButton.external}
+      >
+        {landing.raffleButton.label}
+      </Button>
+    </Fragment>
+
+    <!-- Right Column: Campaign Links, About FFP, and Socials -->
+    <Fragment slot="right">
+      <!-- Current Campaign Stack -->
+      <section class="w-full flex flex-col items-center mb-6">
+        <SectionHeader
+          pretitle={landing.campaignSection.pretitle}
+          title={landing.campaignSection.title}
+        />
+
+        <ButtonList direction="col" gap="md" class="mt-3">
+          {
+            landing.campaignSection.buttons.map((btn) => (
+              <li class="w-full flex justify-center">
+                <Button
+                  href={btn.href}
+                  variant="stacked"
+                  color={btn.color}
+                  external={btn.external}
+                >
+                  {btn.label}
+                </Button>
+              </li>
+            ))
+          }
+        </ButtonList>
+      </section>
+
+      <!-- About FFP Stack -->
+      <section class="w-full flex flex-col items-center mb-4">
+        <SectionHeader title={landing.aboutSection.title} />
+
+        <ButtonList direction="col" gap="md" class="mt-3">
+          {
+            landing.aboutSection.buttons.map((btn) => (
+              <li class="w-full flex justify-center">
+                <Button
+                  href={btn.href}
+                  variant="stacked"
+                  color={btn.color}
+                  external={btn.external}
+                >
+                  {btn.label}
+                </Button>
+              </li>
+            ))
+          }
+        </ButtonList>
+      </section>
+
+      <!-- Social Media Links -->
+      <SocialRow />
+    </Fragment>
+  </TwoColumn>
+</Layout>
+

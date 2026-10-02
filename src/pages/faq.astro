@@ -1,0 +1,68 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/common/SectionHeader.astro';
+import Button from '../components/common/Button.astro';
+import DottedDivider from '../components/common/DottedDivider.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { faq } = siteConfig;
+---
+
+<Layout title="Frequently Asked Questions" description="Answers to common questions about Fandoms for Palestine campaigns, commissions, and donations.">
+  <div class="w-full max-w-[46rem] flex flex-col items-center text-center px-4">
+    <SectionHeader
+      pretitle="- Information & Help -"
+      title="Frequently Asked Questions"
+      subtitle="Everything you need to know about participating in FFP charity events"
+      level={1}
+    />
+
+    <!-- FAQ Questions List -->
+    <div class="w-full space-y-4 my-6 text-left">
+      {
+        faq.map((item, index) => (
+          <div class="bg-black/25 rounded-2xl p-5 sm:p-6 border border-cream/20 shadow-carrd-btn">
+            <h2 class="text-cream text-lg font-bold mb-2 flex items-start gap-2">
+              <span class="text-ffp-lime font-mono">Q{index + 1}:</span>
+              <span>{item.question}</span>
+            </h2>
+            <p class="text-cream/90 text-sm sm:text-base leading-relaxed pl-7">
+              {item.answer}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class="text-cream text-sm my-2">
+      Have a question that isn't answered here? Ask us directly in our Discord server or send us an email.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4 my-4">
+      <Button
+        href="https://discord.gg/hgn2AySnjq"
+        variant="nav"
+        color="green"
+        external={true}
+      >
+        Ask on Discord
+      </Button>
+      <Button
+        href="mailto:fandomsforpalestine@gmail.com"
+        variant="nav"
+        color="coral"
+      >
+        Email the Organizers
+      </Button>
+    </div>
+
+    <DottedDivider />
+
+    <div class="my-2">
+      <Button href="/" variant="nav" color="plum">
+        &larr; Back to Home
+      </Button>
+    </div>
+  </div>
+</Layout>
+

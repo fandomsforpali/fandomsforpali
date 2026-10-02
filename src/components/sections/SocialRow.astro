@@ -1,0 +1,37 @@
+---
+import Icon from '../common/Icon.astro';
+import { siteConfig, type SocialLinkItem } from '../../data/siteConfig';
+
+export interface Props {
+  links?: SocialLinkItem[];
+  class?: string;
+  iconSize?: number;
+}
+
+const {
+  links = siteConfig.landing.socialLinks,
+  class: customClass = '',
+  iconSize = 22,
+} = Astro.props;
+---
+
+<nav aria-label="Social media links" class={`my-4 ${customClass}`}>
+  <ul class="flex flex-row items-center justify-center gap-4 list-none p-0 m-0">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            target={link.href.startsWith('mailto:') ? undefined : '_blank'}
+            rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+            aria-label={link.ariaLabel}
+            class="flex items-center justify-center w-11 h-11 rounded-full bg-cream/15 text-cream hover:bg-cream hover:text-ffp-plum hover:scale-110 active:scale-95 transition-all duration-250 shadow-carrd-btn"
+          >
+            <Icon name={link.icon} size={iconSize} title={link.name} />
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+

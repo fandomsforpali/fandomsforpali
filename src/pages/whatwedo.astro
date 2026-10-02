@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/common/SectionHeader.astro';
+import BannerCard from '../components/common/BannerCard.astro';
+import Button from '../components/common/Button.astro';
+import DottedDivider from '../components/common/DottedDivider.astro';
+import { siteConfig } from '../data/siteConfig';
+
+const { whatWeDo } = siteConfig;
+---
+
+<Layout title={whatWeDo.title} description={whatWeDo.subtitle}>
+  <div class="w-full max-w-[46rem] flex flex-col items-center text-center px-4">
+    <SectionHeader
+      pretitle="- About FFP -"
+      title={whatWeDo.title}
+      subtitle={whatWeDo.subtitle}
+      level={1}
+    />
+
+    <!-- Palestine Heart Art Graphic -->
+    <BannerCard
+      src={whatWeDo.heartImage}
+      alt="Will you free my Palestine heart cookie artwork"
+      rounded="3xl"
+      dashedBorder={true}
+      class="my-6 max-w-xl"
+    />
+
+    <!-- Mission Points List -->
+    <div class="w-full bg-black/20 rounded-2xl p-6 sm:p-8 my-4 border border-cream/20 shadow-carrd-btn text-left">
+      <ul class="space-y-4 text-cream text-base sm:text-lg">
+        {
+          whatWeDo.points.map((point) => (
+            <li class="flex items-start gap-3">
+              <span class="text-ffp-lime font-bold text-xl leading-none mt-1">&#10003;</span>
+              <span>{point}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- Community Discord CTA -->
+    <div class="my-4">
+      <Button
+        href="https://discord.gg/hgn2AySnjq"
+        variant="stacked"
+        color="plum"
+        external={true}
+      >
+        Join the FFP Discord Server
+      </Button>
+    </div>
+
+    <DottedDivider />
+
+    <div class="my-2">
+      <Button href="/" variant="nav" color="green">
+        &larr; Back to Home
+      </Button>
+    </div>
+  </div>
+</Layout>
+

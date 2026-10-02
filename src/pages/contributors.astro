@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionHeader from '../components/common/SectionHeader.astro';
+import Button from '../components/common/Button.astro';
+import ButtonList from '../components/common/ButtonList.astro';
+import DottedDivider from '../components/common/DottedDivider.astro';
+import ArtistCard from '../components/contributors/ArtistCard.astro';
+import WriterCard from '../components/contributors/WriterCard.astro';
+import { artists, writers } from '../data/contributors';
+---
+
+<Layout
+  title="Our Artists & Writers"
+  description="Meet the 44 participating artists and writers donating their talents for the Miraculers for Palestine charity campaign."
+>
+  <div class="w-full max-w-[56rem] flex flex-col items-center text-center px-4">
+    <!-- Page Header -->
+    <SectionHeader
+      pretitle="- Miraculers for Palestine -"
+      title="Our Creators"
+      subtitle="Talented artists and writers offering exclusive commissions to raise humanitarian aid for Palestine"
+      level={1}
+    />
+
+    <!-- Quick Jump & Action Navigation -->
+    <ButtonList direction="row" gap="sm" class="my-4">
+      <li>
+        <Button href="#artists" variant="nav" color="green">
+          🎨 Jump to Artists ({artists.length})
+        </Button>
+      </li>
+      <li>
+        <Button href="#writers" variant="nav" color="orange">
+          ✍️ Jump to Writers ({writers.length})
+        </Button>
+      </li>
+      <li>
+        <Button href="/currentcampaign" variant="nav" color="plum">
+          📋 Pricing Guide
+        </Button>
+      </li>
+      <li>
+        <Button
+          href="https://forms.gle/qRMXcidJjtY5ChEz5"
+          variant="nav"
+          color="crimson"
+          external={true}
+        >
+          📝 Commission Form
+        </Button>
+      </li>
+    </ButtonList>
+
+    <DottedDivider />
+
+    <!-- Artists Section -->
+    <section id="artists" class="w-full my-6 scroll-mt-20">
+      <div class="flex flex-col items-center mb-6">
+        <SectionHeader
+          pretitle="Visual Arts & Comics"
+          title="Our Artists"
+          subtitle="Explore our participating illustrators, their available commission slots, and sample artwork"
+          level={2}
+        />
+        <div class="flex gap-3 mt-2">
+          <a
+            href="#writers"
+            class="text-xs sm:text-sm font-semibold text-cream/80 hover:text-cream underline underline-offset-4"
+          >
+            Go to 'Our Writers' &rarr;
+          </a>
+          <span class="text-cream/50">&bull;</span>
+          <a
+            href="/currentcampaign"
+            class="text-xs sm:text-sm font-semibold text-cream/80 hover:text-cream underline underline-offset-4"
+          >
+            View Price List &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8 w-full">
+        {artists.map((artist) => <ArtistCard artist={artist} />)}
+      </div>
+    </section>
+
+    <DottedDivider />
+
+    <!-- Writers Section -->
+    <section id="writers" class="w-full my-6 scroll-mt-20">
+      <div class="flex flex-col items-center mb-6">
+        <SectionHeader
+          pretitle="Fic, Drabbles & Poetry"
+          title="Our Writers"
+          subtitle="Explore our participating fanfiction authors, available word-count slots, and writing samples"
+          level={2}
+        />
+        <div class="flex gap-3 mt-2">
+          <a
+            href="#artists"
+            class="text-xs sm:text-sm font-semibold text-cream/80 hover:text-cream underline underline-offset-4"
+          >
+            &larr; Back to 'Our Artists'
+          </a>
+          <span class="text-cream/50">&bull;</span>
+          <a
+            href="/currentcampaign"
+            class="text-xs sm:text-sm font-semibold text-cream/80 hover:text-cream underline underline-offset-4"
+          >
+            View Price List &rarr;
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8 w-full">
+        {writers.map((writer) => <WriterCard writer={writer} />)}
+      </div>
+    </section>
+
+    <DottedDivider />
+
+    <!-- Bottom Actions -->
+    <div class="flex flex-wrap items-center justify-center gap-4 my-6">
+      <Button href="/" variant="nav" color="plum">
+        &larr; Back to Home
+      </Button>
+      <Button
+        href="https://forms.gle/qRMXcidJjtY5ChEz5"
+        variant="nav"
+        color="green"
+        external={true}
+      >
+        Submit Commission Request
+      </Button>
+      <Button href="#top" variant="nav" color="coral">
+        &uarr; Back to Top
+      </Button>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import iconsData from '../../data/icons.json';
+
+export interface Props {
+  name: string;
+  class?: string;
+  title?: string;
+  size?: number | string;
+}
+
+const { name, class: className = 'w-5 h-5', title, size } = Astro.props;
+
+const iconEntry = (iconsData as Record<string, { viewBox: string; svg: string }>)[name] ||
+  iconsData['home'];
+
+const sizeStyle = size ? { width: `${size}px`, height: `${size}px` } : undefined;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox={iconEntry.viewBox}
+  class={`inline-block fill-current ${className}`}
+  style={sizeStyle}
+  aria-hidden={title ? undefined : 'true'}
+  role={title ? 'img' : 'presentation'}
+>
+  {title && <title>{title}</title>}
+  <Fragment set:html={iconEntry.svg} />
+</svg>
+
