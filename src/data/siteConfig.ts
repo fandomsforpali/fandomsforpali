@@ -42,6 +42,7 @@ export interface TeamMember {
   name: string;
   role: string;
   socials?: TeamMemberSocial[];
+  inactive?: boolean;
 }
 
 export const siteConfig = {
@@ -342,6 +343,7 @@ export const siteConfig = {
       {
         name: 'Andrea (@trebleclef_zm)',
         role: 'Writing Mod',
+        inactive: true,
         socials: [
           {
             platform: 'instagram',
@@ -358,6 +360,7 @@ export const siteConfig = {
       {
         name: 'Yasmeen (@chaton_buginette)',
         role: 'Social Media & PR Mod',
+        inactive: true,
         socials: [
           {
             platform: 'instagram',
@@ -390,6 +393,7 @@ export const siteConfig = {
       {
         name: 'Cheesyakumas',
         role: 'Graphic design & Organizational Mod',
+        inactive: true,
         socials: [
           {
             platform: 'instagram',
@@ -406,6 +410,7 @@ export const siteConfig = {
       {
         name: 'Tuturu',
         role: 'Organizational Mod',
+        inactive: true,
       },
       {
         name: 'Kyle (@cardiac-agreste)',
@@ -424,7 +429,55 @@ export const siteConfig = {
         ],
       },
       {
+        name: 'Lucca the Bug (@spunkyscribbles)',
+        role: 'Organizational Mod',
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/spunkyscribbles/',
+            ariaLabel: 'Lucca the Bug on Instagram',
+          },
+        ],
+      },
+      {
+        name: 'Joey (@rainyram)',
+        role: 'Organizational Mod',
+        inactive: false,
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/rainyr.am',
+            ariaLabel: 'Joey (rainyr.am) on Instagram',
+          }
+        ]
+      },
+      {
+        name: 'oleander',
+        role: 'Organizational Mod',
+        inactive: false,
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/i_am_a_reader_fear_me_',
+            ariaLabel: 'i_am_a_reader_fear_me_ on Instagram',
+          }
+        ]
+      },
+      {
+        name: 'Qhraine',
+        role: 'Organizational Mod',
+        inactive: false,
+        socials: [
+          {
+            platform: 'instagram',
+            url: 'https://www.instagram.com/qhrarte/',
+            ariaLabel: 'Qhraine on Instagram',
+          }
+        ]
+      },
+      {
         name: 'Louann',
+        inactive: true,
         role: 'General Art Assistant',
       },
     ] as TeamMember[],
